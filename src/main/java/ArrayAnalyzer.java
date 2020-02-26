@@ -21,15 +21,15 @@ public class ArrayAnalyzer {
             x2 = i;
         }
         for (int j = y; j < arrayToReplace.length && arrayToReplace[j][x] != 0; j++) {
-            Arrays.fill(arrayToReplace[j], x, x2, 0);
+            Arrays.fill(arrayToReplace[j], x, x2 + 1, 0);
         }
     }
 
     private static int[][] cloneArray(int[][] arr) {
-        int[][] forRet = new int[arr.length][];
+        int[][] forReturn = new int[arr.length][];
         for (int i = 0; i < arr.length; i++) {
-            forRet[i] = arr[i].clone();
+            forReturn[i] = arr[i].clone();
         }
-        return forRet;
+        return forReturn;
     }
 }
