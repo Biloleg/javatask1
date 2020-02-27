@@ -7,7 +7,7 @@ public class ArrayAnalyzer {
         for (int i = 0; i < testArray.length; i++) {
             for (int j = 0; j < testArray[i].length; j++) {
                 if (testArray[i][j] == 1) {
-                    eraseRectangle(testArray, i, j);
+                    eraseRectangle(testArray, j, i);
                     count++;
                 }
             }
@@ -15,7 +15,7 @@ public class ArrayAnalyzer {
         return count;
     }
 
-    private static void eraseRectangle(int[][] arrayToErase, int y, int x) {
+    private static void eraseRectangle(int[][] arrayToErase, int x, int y) {
         int x2 = x;
         for (int i = x; i < arrayToErase[y].length && arrayToErase[y][i] != 0; i++) {
             x2 = i;
