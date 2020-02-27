@@ -15,13 +15,13 @@ public class ArrayAnalyzer {
         return count;
     }
 
-    private static void eraseRectangle(int[][] arrayToReplace, int y, int x) {
+    private static void eraseRectangle(int[][] arrayToErase, int y, int x) {
         int x2 = x;
-        for (int i = x; i < arrayToReplace[y].length && arrayToReplace[y][i] != 0; i++) {
+        for (int i = x; i < arrayToErase[y].length && arrayToErase[y][i] != 0; i++) {
             x2 = i;
         }
-        for (int j = y; j < arrayToReplace.length && arrayToReplace[j][x] != 0; j++) {
-            Arrays.fill(arrayToReplace[j], x, x2 + 1, 0);
+        for (int j = y; j < arrayToErase.length && arrayToErase[j][x] != 0; j++) {
+            Arrays.fill(arrayToErase[j], x, x2 + 1, 0);
         }
     }
 
