@@ -3,7 +3,10 @@ package rectangles;
 import java.util.Arrays;
 
 public class ArrayAnalyzer {
-    public static int countRectangles(int[][] array) throws WrongRectangleException {
+    public static int countRectangles(int[][] array) throws WrongRectangleException, WrongMatrixException {
+        if(Arrays.stream(array).flatMapToInt(Arrays::stream).filter(i->i!=0 && i!=1).limit(1).count()>0)
+            throw new WrongMatrixException();
+
         int[][] testArray = cloneArray(array);
         int count = 0;
         for (int i = 0; i < testArray.length; i++) {
